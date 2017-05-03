@@ -7,9 +7,20 @@
 #include "Wizard.h"
 #include "Orc.h"
 #include "Die.h"
+#include "Inventory.h"
+#include "Potion.h"
 
 int main() {
     Die::initRandom();
+    Potion p1(12,4);
+    Sword spareSword(12, false, true);
+    Inventory<Potion> vault(2);
+    //Inventory<Sword><Bow> armory(12);
+    Inventory<Weapon *> armory(12);
+    bool result = vault.setElement(0,p1);
+    result = armory.setElement(0,&spareSword);
+    Weapon *armoryElement = nullptr;
+    result = armory.getElement(0,armoryElement);
 
     Weapon* primaryWeapon;
     bool isSword = false;

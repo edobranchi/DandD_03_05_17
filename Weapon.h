@@ -7,7 +7,8 @@
 
 class Weapon {
 public:
-    explicit Weapon(int s, bool m=false) : strength(s), magic(m) {};
+    //Weapon(); //O scrivo il costruttore di default cosi o do un valore sotto ad S
+    explicit Weapon(int s=1, bool m=false) : strength(s), magic(m) {};
     virtual int use() = 0;
 
     virtual Weapon* clone() const = 0;
