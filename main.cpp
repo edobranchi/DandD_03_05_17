@@ -9,10 +9,13 @@
 #include "Die.h"
 #include "Inventory.h"
 #include "Potion.h"
+#include "Utility.h"
 
 int main() {
     Die::initRandom();
     Potion p1(12,4);
+    Potion p2(24,3);
+    Potion strongerPotion = maxElement(p1,p2);
     Sword spareSword(12, false, true);
     Inventory<Potion> vault(2);
     //Inventory<Sword><Bow> armory(12);
@@ -28,6 +31,8 @@ int main() {
         primaryWeapon = new Sword(12, false, true);
     else
         primaryWeapon = new Bow(8, 12, false);
+
+
 
     bool useKnight = true;
     GameCharacter* hero;

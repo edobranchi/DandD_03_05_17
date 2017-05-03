@@ -10,6 +10,7 @@ class Potion {
 
 public:
     explicit Potion(int s=5, int m=5):strength(s),mana(m){}; //costruttore nostro (default)
+    bool operator>(const Potion& right) const;
 
     int getStrength() const {
         return strength;
